@@ -121,4 +121,17 @@ tes_gen = generator(float_data,
 val_steps = (300000 - 200001 - lookback)
 test_steps = (len(float_data) - 300001 - lookback)
 
+#%%
+#Establishing a common sense baseline MAE
+
+def evaluate_naive_method():
+    batch_maes = []
+    for step in range(val_steps):
+        samples, targets = next(val_gen)
+        preds = samples[:,-1,1]
+        mae = np.mean(np.abs(preds-targets))
+        batch_maes.append(mae)
+    print(np.mean(batch_maes))
+
+evaluate_naive_method()
 
