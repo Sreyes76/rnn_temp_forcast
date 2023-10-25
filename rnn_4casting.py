@@ -34,7 +34,7 @@ plt.ylabel("Temp in °C")
 plt.xlabel("No. of lectures")
 plt.show()
 
-# Visualization fro 10 day gap
+# Visualization for 10 day gap
 plt.plot(range(1440), temp[:1440])
 plt.ylabel("Temp in °C")
 plt.xlabel("No. of lectures")
